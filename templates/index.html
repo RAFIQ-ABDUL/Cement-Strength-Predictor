@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    background-image: url("/static/pexels-pixabay-276514.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+header{
+    background-color: #ccc;
+    width: 90%;
+    height: 60px;
+    margin: 0px auto;
+    border-radius: 8px;
+    text-align: center;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+}
+
+li h1{
+    position: absolute;
+    margin-left: 40px;
+    font-family: Arial, Helvetica, sans-serif
+}
+li a.lindin{
+    display: inline;
+    position: absolute;
+    top: 25px;
+    left: 80%;  
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+li a.github{
+    display: inline;
+    position: absolute;
+    top: 25px;
+    left: 70%;  
+    border: 1px solid #ccc;
+    padding: 11px 16px;
+    color: black;
+}
+main{
+    background-color: #ccc;
+    max-height: fit-content;
+    width: 75%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+div p.pred{
+    font-size: 25px;
+    text-align: center;
+}
+div p.note{
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 20px;
+}
+div.input-group1,div.input-group2,div.input-group3,div.input-group4{
+    margin-bottom: 30px;;
+}
+#cement{
+    margin-left: 20px;
+    margin-right: 180px;
+    border-radius: 8px;
+}
+#flyash{
+    margin-left: 97px;
+    margin-right: 180px;
+    border-radius: 8px;
+}
+#superplasticizer{
+    margin-left: 43px;
+    margin-right: 180px;
+    border-radius: 8px;
+}
+#fineagg{
+    margin-left: 48px;
+    margin-right: 180px;
+    border-radius: 8px;
+}
+#slag{
+    margin-left: 20px;
+    border-radius: 8px;
+}
+#water{
+    margin-left: 105px;
+    border-radius: 8px;
+}
+#coarseagg{
+    margin-left: 28px;
+    border-radius: 8px;
+}
+#age{
+    margin-left: 85px;
+    border-radius: 8px;
+}
+div button{
+    background-color: rgb(177, 177, 231);
+    padding: 10px;
+    border-radius: 5px;
+}
+.result {
+            font-size: 1.5em;
+            color: black;
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+</style>
+</head>
+<body>
+<header>
+  <ul>
+  <li><h1>CementPredictor</h1></li>
+  <li><a class="lindin" href="https://www.linkedin.com/in/abdul-manan-710448258/">LinkedIn</a></li>
+  <li><a class="github" href="https://github.com/RAFIQ-ABDUL">GitHub</a></li>
+</ul>
+</header>
+<main class="main_section">
+    <div><p class="pred"><b>Prediction</b></p></div>
+    <div><p class="note"><b>Cement Strenght Prediction</b></p></div>
+    <form action="/predict" method="post">
+        <div class="input-group1">
+          <label for="cement" id="labcem">Quantity of Cement</label>
+          <input type="number" id="cement" name="cement" placeholder="kg/m³" required>
+          <label for="slag" id="labsla">Blast Furnace Slag</label>
+          <input type="number" id="slag" name="slag" placeholder="kg/m³" required>
+        </div>
+        <div class="input-group2">
+          <label for="flyash" id="labflas">Fly Ash</label>
+          <input type="number" id="flyash" name="flyash" placeholder="kg/m³" required>
+          <label for="water" id="labwat">Water</label>
+          <input type="number" id="water" name="water" placeholder="kg/m³" required>
+        </div>
+        <div class="input-group3">
+          <label for="superplasticizer" id="labsup">Superplasticizer</label>
+          <input type="number" id="superplasticizer" name="superplasticizer" placeholder="kg/m³" required>
+          <label for="coarseagg" id="labcoar">Coarse Aggregate</label>
+          <input type="number" id="coarseagg" name="coarseagg" placeholder="kg/m³" required>
+        </div>
+        <div class="input-group4">
+          <label for="fineagg" id="labfin">Fine Aggregate</label>
+          <input type="number" id="fineagg" name="fineagg" placeholder="kg/m³" required>
+          <label for="age" id="labage">Age Day</label>
+          <input type="number" id="age" name="age" placeholder="# of days" required>
+        </div>
+        <div style="text-align: center;">
+            <button style="display: block; margin: 0 auto;">Submit</button>
+        </div>
+      </form>
+      {% if prediction_text %}
+      <div class="result">{{ prediction_text }}</div>
+      {% endif %}
+      
+
+</main>
+</body>
+</html>
