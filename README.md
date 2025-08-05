@@ -28,14 +28,14 @@ pip install -r requirements.txt
 
 📥 Installation
 
-Clone the repository: git clone 
+Clone the repository: git clone https://github.com/RAFIQ-ABDUL/Cement-Strength-Predictor.git
 cd cement-strength-predictor
 
 
 Install the required packages: pip install -r requirements.txt
 
 
-Run the Flask application: python app.py
+Run the Flask application: app.py
 
 Open your browser and visit http://127.0.0.1:5000 to access the application.
 
